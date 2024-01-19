@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block content%}
+
+
+<h1>smile</h1>
+{% if api %}
+    {% if api == "error" %}
+        try again later
+    
+    {%else%}
+    
+        <div class="main" style="background-color: aliceblue; padding: 40px;">
+            <h1>{{api.name}}</h1>
+            <h3>Temperature: {{api.main.temp}}F</h3>
+            <h3>Visibility: {{api.visibility}}m</h3>
+            <h3>Humidity: {{api.main.humidity}}%</h3>
+            <h3>Cloudy: {{api.clouds.all}}%</h3>
+        </div>
+       
+       
+        {% endif %}
+{% endif %}
+
+
+{% endblock%}
